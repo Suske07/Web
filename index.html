@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre - Suske</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: #1a1a1a;
+      color: #eaeaea;
+    }
+    .hero {
+      margin-left: 220px;
+      padding: 60px;
+      display: flex;
+      align-items: flex-start;
+    }
+    .left-side {
+      width: 100%;
+      max-width: 1100px;
+    }
+    .hi-text h1 {
+      margin: 0 0 15px 0;
+      font-size: 32px;
+    }
+    .intro {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px;
+      padding: 25px;
+
+      display: flex;
+      gap: 25px;
+      align-items: flex-start;
+
+      width: 100%;
+      max-width: 1000px;
+    }
+    .intro-text {
+      flex: 1;
+    }
+    .intro-text h2 {
+      font-size: 16px;
+      font-weight: 500;
+      color: #ddd;
+      margin-bottom: 15px;
+      line-height: 1.4;
+    }
+    .intro-text p {
+      color: #bbb;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .intro img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.15);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      flex-shrink: 0;
+    }
+    .contact {
+      margin-top: 20px;
+    }
+    .contact-box {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px;
+      padding: 15px;
+
+      width: 320px; 
+    }
+    .contact-box p {
+      margin: 5px 0;
+    }
+    .contact-box a {
+      color: #eaeaea;
+      text-decoration: none;
+    }
+    .contact-box a:hover {
+      color: #ff2a2a;
+    }
+    @media (max-width: 900px) {
+      .intro {
+        flex-direction: column;
+      }
+      .intro img {
+        width: 220px;
+        height: 220px;
+      }
+      .contact-box {
+        width: 100%; /* responsive fix */
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<nav class="navbar">
+  
+  <div class="logo"><a href="index.html">Suske</a></div>
+  
+  <ul>
+    <li><a href="index.html">About me</a></li>
+    <li><a href="work.html">Work</a></li>
+    <li><a href="reviews.html">Reviews</a></li>
+  </ul>
+  <div id="clock" class="clock">--:--:--</div>
+</nav>
+
+<main class="hero">
+  <div class="left-side">
+    <div class="hi-text">
+      <h1>Hi o/</h1>
+    </div>
+    <div class="intro">
+      <div class="intro-text">
+        <h2>
+          Im Pedro Sousa also known as Suske. Im a game developer, I focus on game design, level design and 3D modeling. And this is my portfolio.
+        </h2>
+        <p>
+          Im currently studying video game design in Universidade Lusofuna do Porto in Portugal, where I currently learning all the intricacies of video game development and their ins and outs. I choose to study this area because video games have always been a big part of who I am and i have dreamt of one day being able to work in this very area not only because it bring me joy but because i want to give this very joy that games have given me to others.
+        </p>
+      </div>
+      <img src="me.jpeg" alt="My photo">
+    </div>
+    <div class="contact">
+      <h2>Contact</h2>
+      <div class="contact-box">
+        <p>Email: S7PedroMail@gmail.com</p>
+        <p>Discord: suske7</p>
+        <a href="https://www.instagram.com/suske07/" target="_blank">
+          Instagram
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
+<script>
+function updateClock() {
+  const now = new Date();
+
+  let h = now.getHours();
+  let m = now.getMinutes();
+  let s = now.getSeconds();
+
+  if (h < 10) h = "0" + h;
+  if (m < 10) m = "0" + m;
+  if (s < 10) s = "0" + s;
+
+  document.getElementById("clock").innerText =
+    h + ":" + m + ":" + s;
+}
+
+setInterval(updateClock, 1000);
+updateClock();
+</script>
+</body>
+</html>

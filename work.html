@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work - Suske</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="logo"><a href="index.html">Suske</a></div>
+  <ul>
+    <li><a href="index.html">About me</a></li>
+    <li><a href="work.html">Work</a></li>
+    <li><a href="reviews.html">Reviews</a></li>
+    <div id="clock" class="clock">--:--:--</div>
+  </ul>
+</nav>
+
+<main>
+  <h1>Work</h1>
+
+  <div class="galeria">
+    <div class="card">
+      <img src="images/project1.png">
+      <p>Projeto 1</p>
+    </div>
+
+    <div class="card">
+      <img src="images/project2.png">
+      <p>Projeto 2</p>
+    </div>
+  </div>
+<script>
+function updateClock() {
+  const now = new Date();
+
+  let h = now.getHours();
+  let m = now.getMinutes();
+  let s = now.getSeconds();
+
+  if (h < 10) h = "0" + h;
+  if (m < 10) m = "0" + m;
+  if (s < 10) s = "0" + s;
+
+  document.getElementById("clock").innerText =
+    h + ":" + m + ":" + s;
+}
+
+setInterval(updateClock, 1000);
+updateClock();
+</script>
+</main>
+
+</body>
+</html>

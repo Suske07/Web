@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - Suske</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="logo"><a href="index.html">Suske</a></div>
+  <ul>
+    <li><a href="index.html">About me</a></li>
+    <li><a href="work.html">Work</a></li>
+    <li><a href="reviews.html">Reviews</a></li>
+    <div id="clock" class="clock">--:--:--</div>
+  </ul>
+</nav>
+
+<main class="reviews-layout">
+
+  <!-- LEFT SIDE: REVIEW LIST -->
+  <div class="reviews-list">
+
+    <h1>Reviews</h1>
+
+    <div class="review-item">
+      <h3>Nier Automata</h3>
+      <button onclick="loadPDF('Critica Nier Automata.pdf')">
+        Open PDF
+      </button>
+    </div>
+
+    <div class="review-item">
+      <h3>Elden Ring</h3>
+      <button onclick="loadPDF('Elden ring.pdf')">
+        Open PDF
+      </button>
+    </div>
+
+  </div>
+
+  <!-- RIGHT SIDE: PDF VIEWER -->
+  <div class="pdf-panel">
+    <iframe id="pdfViewer"></iframe>
+  </div>
+<script>
+function updateClock() {
+  const now = new Date();
+
+  let h = now.getHours();
+  let m = now.getMinutes();
+  let s = now.getSeconds();
+
+  if (h < 10) h = "0" + h;
+  if (m < 10) m = "0" + m;
+  if (s < 10) s = "0" + s;
+
+  document.getElementById("clock").innerText =
+    h + ":" + m + ":" + s;
+}
+
+setInterval(updateClock, 1000);
+updateClock();
+</script>
+</main>
+
+<script>
+function loadPDF(file) {
+  document.getElementById("pdfViewer").src = file;
+}
+</script>
